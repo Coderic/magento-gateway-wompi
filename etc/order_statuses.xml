@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/order_status.xsd">
+    <statuses>
+        <status code="wompi_paid">
+            <label>Pagado</label>
+        </status>
+    </statuses>
+    <states>
+        <state id="processing">
+            <statuses>
+                <status code="wompi_paid"/>
+            </statuses>
+        </state>
+    </states>
+</config>

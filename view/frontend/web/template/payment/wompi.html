@@ -1,0 +1,53 @@
+<div class="payment-method payment-method-wompi" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+        <label data-bind="attr: {'for': getCode()}" class="label payment-method-wompi__title">
+            <span class="payment-method-wompi__brand" aria-hidden="true">Wompi</span>
+            <span data-bind="text: getTitle()"></span>
+        </label>
+    </div>
+    <div class="payment-method-content">
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <div class="payment-method-wompi__panel">
+            <!-- ko if: isSandbox() -->
+            <p class="payment-method-wompi__badge" data-bind="i18n: 'Sandbox mode'"></p>
+            <!-- /ko -->
+            <p class="payment-method-wompi__hint" data-bind="text: getRedirectMessage()"></p>
+            <ul class="payment-method-wompi__methods">
+                <li data-bind="i18n: 'Cards (Visa, Mastercard, Amex)'"></li>
+                <li data-bind="i18n: 'PSE and Nequi'"></li>
+                <li data-bind="i18n: 'Bancolombia and more'"></li>
+            </ul>
+        </div>
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="checkout-agreements-block">
+            <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout payment-method-wompi__submit"
+                        type="submit"
+                        data-bind="
+                        click: placeOrder,
+                        attr: {title: $t('Place Order')},
+                        css: {disabled: !isPlaceOrderActionAllowed()},
+                        enable: (getCode() == isChecked())
+                        "
+                        disabled>
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

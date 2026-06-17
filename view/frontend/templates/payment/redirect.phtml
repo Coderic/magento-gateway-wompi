@@ -1,0 +1,20 @@
+<?php
+declare(strict_types=1);
+
+/** @var \Magento\Framework\View\Element\Template $block */
+$checkoutUrl = (string) $block->getData('checkout_url');
+/** @var array<string, string> $fields */
+$fields = $block->getData('fields') ?? [];
+?>
+<div class="container mx-auto py-12 text-center">
+    <p><?= $block->escapeHtml(__('Redirecting to Wompi secure checkout')) ?></p>
+    <form id="wompi-redirect" action="<?= $block->escapeUrl($checkoutUrl) ?>" method="GET">
+        <?php foreach ($fields as $name => $value) : ?>
+            <input type="hidden" name="<?= $block->escapeHtmlAttr($name) ?>" value="<?= $block->escapeHtmlAttr($value) ?>"/>
+        <?php endforeach; ?>
+        <button type="submit" class="btn btn-primary mt-4"><?= $block->escapeHtml(__('Continue to Wompi')) ?></button>
+    </form>
+</div>
+<script>
+    document.getElementById('wompi-redirect')?.submit();
+</script>
