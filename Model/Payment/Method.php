@@ -24,6 +24,17 @@ class Method extends AbstractMethod
     protected $_canRefund = false;
     protected $_canVoid = false;
     protected $_canUseInternal = false;
+
+    public function canUseInternal(): bool
+    {
+        $info = $this->getInfoInstance();
+        if ($info !== null && $info->getMethod() === self::CODE) {
+            return true;
+        }
+
+        return $this->_canUseInternal;
+    }
+
     protected $_canUseCheckout = true;
     protected $_canUseForMultishipping = false;
     protected $_isInitializeNeeded = true;

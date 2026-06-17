@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.0.4 — 2026-06-18
+
+### Corrección — Wompi visible al editar pedido en Admin
+
+- Plugin `CreatePlugin`: copia `wompi_payment` del pedido al quote en **Edit Order** (Magento no lo hace para métodos offsite).
+- `canUseInternal()` devuelve `true` si el quote ya usa Wompi, para que no aparezca «No Payment Methods».
+- Complementa 2.0.3 (`wompi_paid` registrado en BD para la columna Status).
+
+```bash
+composer require wompi/magento-payment:^2.0.4
+bin/magento setup:upgrade
+bin/magento cache:flush
+```
+
 ## 2.0.3 — 2026-06-18
 
 ### Corrección — status «Pagado» visible en Admin y storefront
