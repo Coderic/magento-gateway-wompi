@@ -23,17 +23,11 @@ class Method extends AbstractMethod
     protected $_canCapture = true;
     protected $_canRefund = false;
     protected $_canVoid = false;
-    protected $_canUseInternal = false;
-
-    public function canUseInternal(): bool
-    {
-        $info = $this->getInfoInstance();
-        if ($info !== null && $info->getMethod() === self::CODE) {
-            return true;
-        }
-
-        return $this->_canUseInternal;
-    }
+    /**
+     * Permite mostrar Wompi en Admin > Edit Order (Magento exige canUseInternal).
+     * El checkout storefront sigue siendo el flujo principal; en Admin solo es_co tiene Wompi activo.
+     */
+    protected $_canUseInternal = true;
 
     protected $_canUseCheckout = true;
     protected $_canUseForMultishipping = false;
