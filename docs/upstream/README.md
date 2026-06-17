@@ -19,7 +19,7 @@ Referencia del plugin histórico Wompi para Magento 2.
 
 | Aspecto | Bancolombia_Wompi | Wompi_Payment |
 |---------|-------------------|---------------|
-| Paquete | `bancolombia/wompi` | `wompi/magento-gateway-wompi` |
+| Paquete | `bancolombia/wompi` | `wompi/magento-payment` |
 | Plan Agregador/Gateway | Sin selector | Selector Admin |
 | Status pagado | `processing` default | `wompi_paid` («Pagado») |
 | Antifraude captura | Stock | Optimizado offsite |

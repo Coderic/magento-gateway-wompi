@@ -7,7 +7,7 @@ Ver [COMPATIBILITY.md](COMPATIBILITY.md): Magento 2.4.6+, PHP 8.1+, checkout Lum
 ## Composer
 
 ```bash
-composer require wompi/magento-gateway-wompi
+composer require wompi/magento-payment
 bin/magento module:enable Wompi_Payment
 bin/magento setup:upgrade
 bin/magento setup:di:compile

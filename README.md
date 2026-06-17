@@ -1,10 +1,10 @@
-# wompi/magento-gateway-wompi
+# wompi/magento-payment
 
 Extensión oficial **Wompi_Payment** para Magento 2: integración con [Wompi Colombia](https://wompi.co) mediante **Web Checkout** (planes Agregador y Gateway).
 
 | Campo | Valor |
 |-------|-------|
-| **Paquete Composer** | `wompi/magento-gateway-wompi` |
+| **Paquete Composer** | `wompi/magento-payment` |
 | **Módulo Magento** | `Wompi_Payment` |
 | **Namespace** | `Wompi\Payment\` |
 | **Vendor** | [Wompi](https://wompi.co) |
@@ -22,7 +22,7 @@ Documentación completa en [`docs/README.md`](docs/README.md).
 ## Instalación
 
 ```bash
-composer require wompi/magento-gateway-wompi
+composer require wompi/magento-payment
 bin/magento module:enable Wompi_Payment
 bin/magento setup:upgrade
 bin/magento setup:di:compile

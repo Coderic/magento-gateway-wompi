@@ -1,8 +1,20 @@
 # Changelog
 
+## 2.0.1 — 2026-05-22
+
+### Cambio de nombre (estándar Magento)
+
+- Paquete Composer: `wompi/magento-gateway-wompi` ? **`wompi/magento-payment`**
+- Repositorio: `magento-gateway-wompi` ? **`magento-payment`**
+- Alineado con convención Adobe/Magento (`magento/module-payment`, módulo `Wompi_Payment`)
+
+```bash
+composer require wompi/magento-payment:^2.0
+```
+
 ## 2.0.0 — 2026-05-22
 
-Primera release pública `wompi/magento-gateway-wompi`.
+Primera release pública (publicada inicialmente como `wompi/magento-gateway-wompi`).
 
 ### Incluye
 

@@ -3,7 +3,7 @@
 ## Instalación o actualización
 
 ```bash
-composer require wompi/magento-gateway-wompi:^2.0
+composer require wompi/magento-payment:^2.0
 bin/magento module:enable Wompi_Payment
 bin/magento setup:upgrade --no-interaction
 bin/magento setup:di:compile
@@ -37,10 +37,10 @@ Tras migrar, actualice la URL del webhook en el panel Wompi si antes usaba otro 
   "repositories": [
     { "type": "path", "url": "../magento2-module-wompi-co" }
   ],
-  "require": { "wompi/magento-gateway-wompi": "@dev" },
+  "require": { "wompi/magento-payment": "@dev" },
   "extra": {
     "installer-paths": {
-      "app/code/Wompi/Payment": ["wompi/magento-gateway-wompi"]
+      "app/code/Wompi/Payment": ["wompi/magento-payment"]
     }
   }
 }
@@ -49,7 +49,7 @@ Tras migrar, actualice la URL del webhook en el panel Wompi si antes usaba otro 
 Montaje típico en contenedor Docker:
 
 ```yaml
-- ./vendor/wompi/magento-gateway-wompi:/var/www/html/app/code/Wompi/Payment
+- ./vendor/wompi/magento-payment:/var/www/html/app/code/Wompi/Payment
 ```
 
 ## Checklist post-despliegue

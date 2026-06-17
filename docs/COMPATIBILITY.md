@@ -15,7 +15,7 @@ Validado en Magento **2.4.9**, PHP **8.3**, tema **Luma** stock.
 
 ```json
 {
-  "name": "wompi/magento-gateway-wompi",
+  "name": "wompi/magento-payment",
   "version": "2.0.0"
 }
 ```

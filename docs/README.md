@@ -4,7 +4,7 @@
   <img src="assets/wompi_logo.png" alt="Wompi" width="200" />
 </p>
 
-Extensión **Wompi_Payment** (`wompi/magento-gateway-wompi`): integración con [Wompi Colombia](https://wompi.co) mediante **Web Checkout**.
+Extensión **Wompi_Payment** (`wompi/magento-payment`): integración con [Wompi Colombia](https://wompi.co) mediante **Web Checkout**.
 
 | Recurso | Enlace |
 |---------|--------|
